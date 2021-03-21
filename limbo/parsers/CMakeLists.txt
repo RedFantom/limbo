@@ -1,3 +1,6 @@
+cmake_minimum_required(VERSION 3.15)
+find_package(FLEX REQUIRED)
+find_package(Boost COMPONENTS system thread REQUIRED)
 add_subdirectory(bookshelf/bison)
 add_subdirectory(def/bison)
 add_subdirectory(def/adapt)

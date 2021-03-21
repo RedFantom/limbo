@@ -6,15 +6,15 @@ set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}" CACHE PATH "Prefix prepen
 
 if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, Debug|Release" FORCE)
-endif(NOT CMAKE_BUILD_TYPE)
+endif (NOT CMAKE_BUILD_TYPE)
 message(STATUS "CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
 
 # deal with GCC dual ABI issue 
-if(NOT CMAKE_CXX_ABI)
+if (NOT CMAKE_CXX_ABI)
     set(CMAKE_CXX_ABI 0 CACHE STRING
-        "Choose the value for _GLIBCXX_USE_CXX11_ABI, options are: 0|1."
-        FORCE)
-endif(NOT CMAKE_CXX_ABI)
+            "Choose the value for _GLIBCXX_USE_CXX11_ABI, options are: 0|1."
+            FORCE)
+endif (NOT CMAKE_CXX_ABI)
 message(STATUS "CMAKE_CXX_ABI: _GLIBCXX_USE_CXX11_ABI=${CMAKE_CXX_ABI}")
 add_definitions(-D_GLIBCXX_USE_CXX11_ABI=${CMAKE_CXX_ABI})
 
@@ -45,8 +45,12 @@ find_package(BISON 3.3 REQUIRED)
 find_package(FLEX REQUIRED)
 find_package(ZLIB REQUIRED)
 find_package(Boost 1.55.0 REQUIRED COMPONENTS graph regex)
-find_package(Gurobi)
-find_package(LpSolve)
+if (USE_GUROBI)
+    find_package(Gurobi)
+endif (USE_GUROBI)
+if (USE_LPSOLVE)
+    find_package(LpSolve)
+endif (USE_LPSOLVE)
 
 add_subdirectory(limbo)
 if (ENABLE_TEST)
@@ -57,5 +61,5 @@ if (GENERATE_DOCS)
     find_package(Doxygen)
     if (DOXYGEN_FOUND)
         add_subdirectory(docs)
-    endif(DOXYGEN_FOUND)
-endif(GENERATE_DOCS)
+    endif (DOXYGEN_FOUND)
+endif (GENERATE_DOCS)

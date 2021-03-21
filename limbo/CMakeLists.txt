@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0.2)
-
+include_directories("..")
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 add_subdirectory(thirdparty)
 add_subdirectory(algorithms)
 add_subdirectory(bibtex)

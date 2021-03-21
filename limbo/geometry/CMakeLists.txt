@@ -1,3 +1,4 @@
+find_package(Boost REQUIRED)
 if(Boost_INCLUDE_DIRS)
     set(INCLUDES ${Boost_INCLUDE_DIRS})
     set(LIBS ${Boost_LIBRARIES})

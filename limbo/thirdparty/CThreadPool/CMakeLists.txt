@@ -1,6 +1,7 @@
 project(CThreadPool)
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
+link_libraries(pthread)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 add_library(${PROJECT_NAME}_thpool STATIC ${CMAKE_CURRENT_SOURCE_DIR}/thpool.c)

@@ -4,7 +4,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${FLEX_INCLUDE_DIRS}
     )
-
 BISON_TARGET(BookshelfParser
              BookshelfParser.yy
              ${CMAKE_CURRENT_BINARY_DIR}/BookshelfParser.cc

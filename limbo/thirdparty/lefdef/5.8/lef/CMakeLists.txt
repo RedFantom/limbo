@@ -28,7 +28,7 @@ set(LEF_HEADERS
     lef/crypt.hpp      lef/lefiCrossTalk.hpp  lef/lefiDefs.hpp        lef/lefiKRDefs.hpp  lef/lefiMacro.hpp  lef/lefiNonDefault.hpp  lef/lefiPropType.hpp  lef/lefiUser.hpp  lef/lefiVia.hpp      lef/lefrCallBacks.hpp  lef/lefrReader.hpp    lef/lefwWriterCalls.hpp
     lef/lefiArray.hpp  lef/lefiDebug.hpp      lef/lefiEncryptInt.hpp  lef/lefiLayer.hpp   lef/lefiMisc.hpp   lef/lefiProp.hpp        lef/lefiUnits.hpp     lef/lefiUtil.hpp  lef/lefiViaRule.hpp  lef/lefrData.hpp       lef/lefrSettings.hpp  lef/lefwWriter.hpp
     )
-
+find_package(BISON REQUIRED)
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/lef
